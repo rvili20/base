@@ -8,6 +8,8 @@ public class TrainControllerImpl implements TrainController {
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
 
+	private boolean isEmergencyBrake = false;
+
 	@Override
 	public void followSpeed() {
 		if (referenceSpeed < 0) {
@@ -19,8 +21,16 @@ public class TrainControllerImpl implements TrainController {
 		        referenceSpeed = 0;
             }
 		}
+		if(isEmergencyBrake){
+			speedLimit = 0;
+		}
 
 		enforceSpeedLimit();
+	}
+
+	@Override
+	public void setEmergencyBrake(boolean isEmergencyBrake){
+		this.isEmergencyBrake = isEmergencyBrake;
 	}
 
 	@Override
