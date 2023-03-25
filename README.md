@@ -66,6 +66,6 @@ The figure below illustrates this behavior using an example.
 # Ez az elso komment
 ## Ez a masodik komment
 ### Ez a harmadik, egyben utolso komment
-*ez is komment*
+*ez ITT is komment*
 1. lista elso eleme
 2. lista masodik eleme
