@@ -13,4 +13,8 @@ public interface TrainController {
 	void setEmergencyBrake(boolean isEmergencyBrake);
 
 	boolean getEmergencyBrake();
+
+	int getStep();
+
+	public void setSensor(TrainSensor sensor);
 }

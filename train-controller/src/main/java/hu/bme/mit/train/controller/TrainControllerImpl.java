@@ -1,6 +1,9 @@
 package hu.bme.mit.train.controller;
 
 import hu.bme.mit.train.interfaces.TrainController;
+import hu.bme.mit.train.interfaces.TrainSensor;
+
+import java.time.LocalTime;
 
 public class TrainControllerImpl implements TrainController {
 
@@ -9,6 +12,13 @@ public class TrainControllerImpl implements TrainController {
 	private int speedLimit = 0;
 
 	private boolean isEmergencyBrake = false;
+
+	private TrainSensor sensor;
+
+	@Override
+	public void setSensor(TrainSensor sensor){
+		this.sensor = sensor;
+	}
 
 	@Override
 	public void followSpeed() {
@@ -26,6 +36,7 @@ public class TrainControllerImpl implements TrainController {
 		}
 
 		enforceSpeedLimit();
+		sensor.tachographRecordAdd();
 	}
 
 	@Override
@@ -59,6 +70,11 @@ public class TrainControllerImpl implements TrainController {
 	@Override
 	public boolean getEmergencyBrake(){
 		return this.isEmergencyBrake;
+	}
+
+	@Override
+	public int getStep(){
+		return this.step;
 	}
 
 }

@@ -62,4 +62,10 @@ public class TrainSystemTest {
 		controller.setEmergencyBrake(false);
 		Assert.assertFalse(controller.getEmergencyBrake());
 	}
+
+	@Test
+	public void tachographTest(){
+		controller.followSpeed();
+		Assert.assertFalse(sensor.getTachograph().isEmpty());
+	}
 }
