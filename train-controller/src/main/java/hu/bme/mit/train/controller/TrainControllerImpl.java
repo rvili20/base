@@ -56,4 +56,9 @@ public class TrainControllerImpl implements TrainController {
 		this.step = joystickPosition;		
 	}
 
+	@Override
+	public boolean getEmergencyBrake(){
+		return this.isEmergencyBrake;
+	}
+
 }
