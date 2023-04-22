@@ -81,7 +81,4 @@ public class TrainControllerImpl implements TrainController {
 	public void timerMethod(){
 
 	}
-
-
-
 }

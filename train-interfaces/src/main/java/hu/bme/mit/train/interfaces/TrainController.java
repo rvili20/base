@@ -30,17 +30,16 @@ public interface TrainController {
 		 private long currTime = 0;
 		 @Override
 		 public void run() {
-			int i = 0;
-			 while(i < 7){
+			int time = 0;
+			 while(time < 7){
 				 try {
 					 Thread.sleep(1000);
 				 } catch (InterruptedException e) {
 					 throw new RuntimeException(e);
 				 }
 				 controller.followSpeed();
-				 System.out.println(controller.getReferenceSpeed());
 				 currTime++;
-				 i++;
+				 time++;
 			 }
 		 }
 
