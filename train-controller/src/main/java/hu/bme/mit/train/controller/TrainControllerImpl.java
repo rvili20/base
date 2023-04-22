@@ -14,6 +14,8 @@ public class TrainControllerImpl implements TrainController {
 
 	private boolean isEmergencyBrake = false;
 
+
+
 	private TrainSensor sensor;
 
 	Timer timer = new Timer();
