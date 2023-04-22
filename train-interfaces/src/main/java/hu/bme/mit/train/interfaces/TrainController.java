@@ -16,5 +16,7 @@ public interface TrainController {
 
 	int getStep();
 
-	public void setSensor(TrainSensor sensor);
+	void setSensor(TrainSensor sensor);
+
+	void weAreChecking();
 }

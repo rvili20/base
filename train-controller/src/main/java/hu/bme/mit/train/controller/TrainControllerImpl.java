@@ -3,7 +3,8 @@ package hu.bme.mit.train.controller;
 import hu.bme.mit.train.interfaces.TrainController;
 import hu.bme.mit.train.interfaces.TrainSensor;
 
-import java.time.LocalTime;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class TrainControllerImpl implements TrainController {
 
@@ -12,8 +13,18 @@ public class TrainControllerImpl implements TrainController {
 	private int speedLimit = 0;
 
 	private boolean isEmergencyBrake = false;
-
 	private TrainSensor sensor;
+	Timer timer = new Timer();
+	TimerTask checking = new TimerTask() {
+		@Override
+		public void run() {
+			followSpeed();
+		}
+	};
+	@Override
+	public void weAreChecking(){
+		timer.scheduleAtFixedRate(checking, 0, 1000);
+	}
 
 	@Override
 	public void setSensor(TrainSensor sensor){
@@ -53,7 +64,6 @@ public class TrainControllerImpl implements TrainController {
 	public void setSpeedLimit(int speedLimit) {
 		this.speedLimit = speedLimit;
 		enforceSpeedLimit();
-		
 	}
 
 	private void enforceSpeedLimit() {
