@@ -13,11 +13,7 @@ public class TrainControllerImpl implements TrainController {
 	private int speedLimit = 0;
 
 	private boolean isEmergencyBrake = false;
-
-
-
 	private TrainSensor sensor;
-
 	Timer timer = new Timer();
 	TimerTask checking = new TimerTask() {
 		@Override
@@ -54,8 +50,6 @@ public class TrainControllerImpl implements TrainController {
 		sensor.tachographRecordAdd();
 	}
 
-
-
 	@Override
 	public void setEmergencyBrake(boolean isEmergencyBrake){
 		this.isEmergencyBrake = isEmergencyBrake;
@@ -70,7 +64,6 @@ public class TrainControllerImpl implements TrainController {
 	public void setSpeedLimit(int speedLimit) {
 		this.speedLimit = speedLimit;
 		enforceSpeedLimit();
-		
 	}
 
 	private void enforceSpeedLimit() {
