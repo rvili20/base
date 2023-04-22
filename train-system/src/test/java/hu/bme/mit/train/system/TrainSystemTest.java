@@ -1,5 +1,6 @@
 package hu.bme.mit.train.system;
 
+import hu.bme.mit.train.controller.TrainControllerImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

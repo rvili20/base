@@ -77,4 +77,11 @@ public class TrainControllerImpl implements TrainController {
 		return this.step;
 	}
 
+	@Override
+	public void timerMethod(){
+
+	}
+
+
+
 }
