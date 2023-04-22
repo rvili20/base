@@ -25,6 +25,7 @@ public interface TrainController {
 
 		 public Timer(TrainController controller){
 			 this.controller = controller;
+
 		 }
 		 private long currTime = 0;
 		 @Override
