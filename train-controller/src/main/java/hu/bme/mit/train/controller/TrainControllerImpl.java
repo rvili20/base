@@ -79,6 +79,6 @@ public class TrainControllerImpl implements TrainController {
 
 	@Override
 	public void timerMethod(){
-
-	}
+   // TODO document why this method is empty
+ }
 }
